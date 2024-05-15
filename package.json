@@ -1,0 +1,25 @@
+{
+  "name": "xhooks",
+  "version": "1.0.0",
+  "description": "hooks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amyhuangxbd/xhooks.git"
+  },
+  "keywords": [
+    "hooks"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amyhuangxbd/xhooks/issues"
+  },
+  "homepage": "https://github.com/amyhuangxbd/xhooks#readme",
+  "dependencies": {
+    "react": "^18.3.1"
+  }
+}
