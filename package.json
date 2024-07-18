@@ -1,10 +1,13 @@
 {
   "name": "xhooks",
-  "version": "1.0.0",
-  "description": "hooks",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "xhooks",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run dev",
+    "dev": "dumi dev",
+    "build": "dumi build",
+    "preview": "dumi preview",
+    "prepare": "husky install && dumi setup"
   },
   "repository": {
     "type": "git",
@@ -13,13 +16,26 @@
   "keywords": [
     "hooks"
   ],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/amyhuangxbd/xhooks/issues"
+  "authors": [
+    "huanghx2018@qq.com"
+  ],
+  "license": "MIT",
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
-  "homepage": "https://github.com/amyhuangxbd/xhooks#readme",
-  "dependencies": {
-    "react": "^18.3.1"
+  "lint-staged": {
+    "*.{md,json}": [
+      "prettier --write --no-error-on-unmatched-pattern"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "dumi": "^2.3.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
   }
 }
