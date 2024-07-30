@@ -4,10 +4,10 @@ hero:
   title: Site
   description: A static site based on dumi
   actions:
-    - text: Hello
-      link: /
-    - text: World
-      link: /
+    - text: Guide
+      link: /guide
+    - text: Hooks List
+      link: /hooks
 features:
   - title: Hello
     emoji: 💎
