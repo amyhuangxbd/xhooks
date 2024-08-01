@@ -1,8 +1,8 @@
 ---
-title: A static site based on dumi
+title: 常用的React Hooks库
 hero:
-  title: Site
-  description: A static site based on dumi
+  title: xhooks
+  description: 常用的React Hooks库
   actions:
     - text: Guide
       link: /guide

@@ -1,16 +1,28 @@
 import { useEffect } from 'react';
-function useAsyncEffect(effect: () => Promise<void>, deps?: any[]) {
-    
+import { isGeneratorFunction } from '../utils/testingHelpers';
+function useAsyncEffect(effect: (isCanceled: () => boolean) => AsyncGenerator<void, void, void> | Promise<void>, deps?: any[]) {
     useEffect(() => {
-      let isActive = true;
-      (async () => {
-        if (isActive) {
-            await effect()
-        }
-      })();
+      let canceled = false;
+      if (isGeneratorFunction(effect)) {
+        
+        (async() => {
+          const e = effect(() => canceled) as AsyncGenerator<void, void, void>
+          while (true) {
+            const result = await e.next();
+            console.log({canceled})
+            if (result.done || canceled) {
+              break;
+            }
+          }
+        })()
+        
+      } else {
+        effect(() => canceled)
+      }
+      
     
       return () => {
-        isActive = false
+        canceled = true;
       }
     }, deps)
 }
