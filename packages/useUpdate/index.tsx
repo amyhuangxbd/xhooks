@@ -1,10 +1,10 @@
 import react, { useState, useCallback } from 'react';
 
 function useUpdate() {
-    const [, setState] = useState(-1)
+    const [, setState] = useState(0)
     return useCallback(
       () => {
-        setState(Math.random())
+        setState(prev => prev + 1 % 2)
       },
       [],
     )
